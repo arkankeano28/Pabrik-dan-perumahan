@@ -1,0 +1,230 @@
+/*
+  Hover and click on the card for animations!
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Cormorant+Garamond);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family:Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  box-sizing: inherit;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, .5),
+                -1px -1px 1px rgba(179, 179, 179, .5),
+                1px 1px 0 rgba(255, 255, 255, 0.55),
+                0 1px 3px  #ddf4e7;
+  overflow: hidden;
+  color: #191919;
+  background-color:rgb(144, 201, 255);
+}
+
+button {
+  display: block;
+  position: relative;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  text-shadow: inherit;
+  cursor: pointer;
+  outline: inherit;
+  z-index: 10;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.big {
+  font-size: 150%;
+}
+
+.med {
+  font-size: 100%;
+  letter-spacing: .5px;
+}
+
+.small {
+  font-size: 65%;
+  letter-spacing: .5px;
+}
+
+.no-space {
+  letter-spacing: 0px;
+}
+
+.card {
+  background-color: #318ef8;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  height: 200px;
+  width: 350px;
+  margin: 20vh auto 0 auto;
+  padding: 20px 10px 10px 10px;
+  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+  /*transform-origin: 50% 100%;*/
+  box-shadow: 0;
+  transition: transform .4s ease,
+              box-shadow .4s ease;
+  align-items:baseline;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg) translateZ(10px);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, .4);
+}
+
+.card:focus {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(10px);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .4);
+}
+
+.card:focus::before {
+  transform: skewX(0deg) translateX(0px) translateY(0px);
+  height: 0px;
+
+}
+
+.card:focus::after {
+  transform: skewY(0deg) translateX(0px) translateY(0px);
+  width: 0px;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: rgb(88, 83, 76);
+  transition: transform .4s ease,
+              height .4s ease,
+              width .4s ease;
+}
+
+.card::before {
+  width: 100%;
+  height: 6px;
+  bottom: 0;
+  left: 0;
+  transform: skewX(45deg) translateX(-3px) translateY(6px);
+}
+
+.card::after {
+  height: 100%;
+  width: 6px;
+  top: 0;
+  right: 0;
+  transform: skewY(45deg) translateX(6px) translateY(-3px);
+}
+
+.row {
+  display: block;
+  text-align: center;
+}
+
+.row:nth-child(2) {
+  margin: 35px 0 50px 0;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+p {
+  margin: 0;
+}
+nav ul{
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform:capitalize;
+  list-style: none;
+  text-align: center;
+  background-color: #124170;
+  margin: 0;
+  padding: 10 px 0;
+}
+
+nav ul li{
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a{
+  color: #67C090;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover{
+  color: #DDF4E7;
+}
+
+header{
+  background-color: #67C090;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #124170;
+  text-align: center;
+  padding: 20 px 0;
+  margin: 10 px;
+}
+
+footer {
+  font-family: Arial, Helvetica, sans-serif;
+  border: #124170;
+  list-style:none;
+  text-align: center;
+  
+  
+  padding: 10 px 0;
+  font-size: 18 px;
+}
+
+footer ul{
+  background-color: #67C090;
+}
+footer ul li {
+  display: inline;
+  text-transform:capitalize;
+  margin-right: 20px;
+  
+  /* grid-template-columns: 1fr 2fr 3fr; */
+  /* gap: 20 px; */
+}
+footer ul li a {
+  color: #124170;
+  text-decoration: none;
+  font-size: medium;
+}
+footer ul li a:hover{
+  color: #67C090;
+}
+
+footer div{
+  background-color: #124170;
+  color: white;
+}
+footer p{
+  background-color: #67C090;
+  color: #124170;
+}
